@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joe Barnett - Python Developer</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/python.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Joseph Barnett</h1>
+            <h2>Cloud Engineering | AWS </h2>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#interactive">Interactive Demo</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>I am a highly focused, committed and goal oriented individual, who takes pride in their ability to navigate and succeed in delivering IT solutions to the client which both parties can be proud of. I emphasise high-quality and due-diligence in my approach to work with a key emphasis on security in the cloud. I have committed myself to becoming a life long student and my passion is learning new concepts which help my understanding of technical processes.</p>
+        </div>
+    </section>
+
+    <section id="skills" class="section alt-bg">
+        <div class="container">
+            <h2>Technical Skills</h2>
+            <div class="skills-container">
+                <div class="skill-card">
+                    <h3>Code</h3>
+                    <ul>
+                        <li>NextJS with Typescript</li>
+                        <li>PostgreSQL</li>
+                        <li>Python scripting</li>
+                        <li>API development</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>AWS</h3>
+                    <ul>
+                        <li>EC2, S3, Lambda, EKS</li>
+                        <li>CloudFormation</li>
+                        <li>IAM & Security Services</li>
+                        <li>Serverless architecture</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>IaC</h3>
+                    <ul>
+                        <li>CDK Pipelines</li>
+                        <li>Terraform</li>
+                        <li>AWS SDK</li>
+                        <li>CloudFormation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="interactive" class="section alt-bg">
+        <div class="container">
+            <h2>Interactive Python Demo</h2>
+            <p>Discover random fun facts about me through this interactive Python script! This demo uses Pyodide to run Python directly in the browser. You can actually modify the code to see more facts 😊</p>
+            
+            <div class="interactive-python">
+                <div class="code-editor">
+                    <textarea id="python-code">
+# Interactive Fun Facts Generator
+import random
+
+# List of fun facts about me!
+fun_facts = [
+    "I was promoted to Platform Operations Team Lead at Northrop Grumman within weeks of joining",
+    "I created an AWS native CI/CD pipeline allowing seamless container-based development through CDK Pipelines",
+    "I hold multiple AWS certifications including Solutions Architect Associate, Developer Associate, and Cloud Practitioner",
+    "I collaborated with Cyber Security teams to implement AWS security best practices using GuardDuty, Inspector and Security Hub",
+    "I mentored Junior Engineers in troubleshooting customer issues and Infrastructure as Code development",
+    "I got my apprenticeship qualification with IBM in Hardware",
+    "I led critical change requests for national critical infrastructure across 4 data center sites",
+    "I automated AWS Infrastructure deployment using YAML-based CloudFormation Templates",
+    "I assisted in securing contract signings worth over $5.7M for multiple clients at IBM",
+    "I'm skilled in Linux administration including scripting, back-up configuration, and patching",
+    "I built a SaaS application that helps musicians promote their music"
+]
+
+def get_random_facts(num_facts=3):
+    """
+    Get a random selection of fun facts about me.
+    
+    Args:
+        num_facts: Number of facts to return (default: 3)
+        
+    Returns:
+        List of randomly selected facts
+    """
+    # Makes sure we don't request more facts than are available
+    num_to_return = min(num_facts, len(fun_facts))
+    
+    # Randomly select facts without duplication
+    selected_facts = random.sample(fun_facts, num_to_return)
+    return selected_facts
+
+def format_facts(facts_list):
+    """Format the facts list with nice formatting."""
+    result = "🌟 Fun Facts About Me 🌟\n"
+    result += "=" * 40 + "\n"
+    
+    for i, fact in enumerate(facts_list, 1):
+        result += f"{i}. {fact}\n"
+    
+    result += "=" * 40 + "\n"
+    return result
+
+# Default to 3 random facts
+selected_facts = get_random_facts()
+formatted_output = format_facts(selected_facts)
+print(formatted_output)
+
+
+
+
+                    </textarea>
+                </div>
+                <div class="code-controls">
+                    <button id="run-button">Run Python Code</button>
+                    <button id="clear-button">Clear Output</button>
+                </div>
+                <div class="code-output">
+                    <pre id="output"></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <div class="contact-links">
+                <a href="https://github.com/josephbarnett5" target="_blank" class="contact-button">GitHub</a>
+                <a href="https://uk.linkedin.com/in/joseph-barnett-b1b3141a7?trk=public_profile_browsemap" target="_blank" class="contact-button">LinkedIn</a>
+                <a href="mailto:josephbarnett5@gmail.com" class="contact-button">Email</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Joseph Barnett. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Initialize syntax highlighting
+        document.addEventListener('DOMContentLoaded', () => {
+            hljs.highlightAll();
+        });
+    </script>
+</body>
+</html> 
